@@ -74,6 +74,12 @@ Calvin Gutsa and Kevin Mai
 ---
 
 ## 🚀 How to Run Locally
+# Comments by Kevin
+ - Please run the python notebook file with the extension .ipynb file.
+ - We have performed steps up to the gradio app. But we are unable to get the gradio and retrieval milestone done correctly
+ - We have only done data collection, data featurization and finetunning. We didn't really finetune but used a pre-trained CLIP model
+ - I apologize but please contact on Discord if you need help running the code.
+
 
 ```bash
 # Install necessary packages
