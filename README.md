@@ -85,3 +85,5 @@ pip install gradio ffmpeg-python datasets qdrant-client sentence-transformers re
 # Run the app
 python app.py
 ```
+## Uploaded the extracted videos on the drive
+https://drive.google.com/drive/folders/1Z75-gLM_Pk5vBiZ7l9uI8-Wus-b-sNzK
