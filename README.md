@@ -1,4 +1,7 @@
 # 📚 Chat with Your Course Videos (RAG System)
+# There is a demonstration mp4 video files that is located at this google drive link that will show you how to run the code. Please open the link with your NYU account
+# This video
+https://drive.google.com/file/d/1hWvUnVHzmT7E-_R2XkKsjtWCe3vZfTlt/view?usp=sharing
 
 ## Overview
 **Chat with Your Course Videos** is a Retrieval-Augmented Generation (RAG) system designed to allow users to ask natural language questions and retrieve relevant short video clips from a course video library.
