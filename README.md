@@ -13,23 +13,22 @@ Calvin Gutsa and Kevin Mai
 
 ---
 
-## ✨ Features
+## Milesstones
 
-- **Natural Language Questioning:**  
-  Users ask questions like "Explain how ResNets work" and receive targeted video clips in response.
+- Data Collection Milestone
+  The data is collected through a function called load_dataset function from the hugging face library. This loads the 8 videos into a variable with 'train' which contains certain types of data. The data was then cleaned and deduplicated using a regex. The regex removes 1-15 repeated words that are next to each other.
 
-- **Video Segment Extraction:**  
-  Instead of returning full videos, the system trims and returns only the most relevant segments based on timestamps.
+- Semantic Chunking
+  Semantic chunking is done using the spaCy model. The spaCy model we pass the cleaned and deduplicated subtitles of the entire video. This will then create "sentences" or groups that spaCy thinks are sentences. This is a form of semantic chunking. We use the function called "process_vtt_metadata' which will return semantically chunked sentences as well as timed chunks. The time chunks are created by approximate_sentence_timestamps which will approximate the timestamps. It uses a process called fuzzy matching that matches similar sentences. The idea is to take the "semantic chunks" and take the first 10 words and find the subtitle that is most similar to that beginning first 10 words. Then that is our start timestamp and repeat for the last 10 words to find the end time stamp.
 
-- **Subtitles-Aware Summaries:**  
-  If subtitles are available, a brief textual summary is generated alongside the video clips.
+- Finetuning Milestone
+  We chose not to use the fine-tuning aspect of the project. We decided to use the pre-trained CLIP model instead to encode our subtitles into embeddings
 
-- **Fast Clip Processing:**  
-  Using `ffmpeg` with direct codec copying for lightweight and quick trimming.
+- **Data featurization Milestone**
+  We proceeeded to use BERTopic that uses the sentence encoder of clip to process our embeddings. This will create embeddings that will be topic encoded as well into our Qdrant database.
 
-- **User-Friendly Gradio Interface:**  
-  Simple web app built with Gradio for easy demo and testing.
-
+- **Retrieval Milestone**
+  Our retrieveal milestone is not perfect because we could not get FFMPEG to work. Instead our gradio app returns the entire video without the slicing. The query inputted into the gradio app is encoded using CLIP then performs a similarity search on Qdrant. This will then produce the nearest 3 semantic chunks to that query. We could not get FFMPEG to work so instead our gradio app returns the entire video of that related semantic chunk.
 ---
 
 ## 🛠️ Technology Stack
